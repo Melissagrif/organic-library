@@ -42,10 +42,21 @@ void loop() {
       Serial.print("CO2 concentration: ");
       Serial.print(CO2);
       Serial.println("ppm");
+      Serial.print(now.year());
+      Serial.print('-');
+      Serial.print(now.month());
+      Serial.print('-');
+      Serial.print(now.day());
+      Serial.print(' ');
+      Serial.print(now.hour());
+      Serial.print(':');
+      Serial.print(now.minute());
+      Serial.print(':');
+      Serial.print(now.second());
+      Serial.print(',');
                }
-
   }
-
  }
-
  }
+      DateTime now = rtc.now();
+
