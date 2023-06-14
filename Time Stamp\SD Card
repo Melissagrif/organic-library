@@ -1,7 +1,7 @@
 // ===================================================
 // RobotDyn SD/RTC Arduino shield example
-// Alli Porter
-// Last revised: 2023-5-31
+// Alli Porter, Adam Packard, Melissa Griffin
+// Last revised: 2023-6-14
 //
 // Meant to serve as a starting point for data logging
 // using both a real-time clock (RTC) and a microSD 
