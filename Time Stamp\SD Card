@@ -27,8 +27,8 @@ unsigned char hexdata[9] = {0xFF,0x01,0x86,0x00,0x00,0x00,0x00,0x00,0x79}; //Rea
 // # We have two types of dataloggers. If the battery 
 // #    holder is black use pin 9.  If the battery holder 
 // #    is brown then use pin 10.
-const int SD_PIN = 9;
-const int tempPin = A0;
+
+const int SD_PIN = 10;
 
 File logfile;
 
