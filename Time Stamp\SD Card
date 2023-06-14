@@ -1,3 +1,4 @@
+
 // ===================================================
 // RobotDyn SD/RTC Arduino shield example
 // Alli Porter, Adam Packard, Melissa Griffin
@@ -16,13 +17,12 @@
 #include <SPI.h>
 #include <SD.h>
 #include <SoftwareSerial.h>
+#include <RTClib.h>
 
 //For CO2 sensor
 SoftwareSerial mySerial(8, 11); // RX, TX
 unsigned char hexdata[9] = {0xFF,0x01,0x86,0x00,0x00,0x00,0x00,0x00,0x79}; //Read the gas density command /Don't change the order
 
-// by Adafruit. Must be manually installed
-#include "RTClib.h" 
 
 // # We have two types of dataloggers. If the battery 
 // #    holder is black use pin 9.  If the battery holder 
