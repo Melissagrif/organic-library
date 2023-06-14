@@ -60,12 +60,24 @@ void setup()
 void loop ()
 {
   if (i < N) {
-    // take actual temperatures instead of a random number
-    int tempReading = analogRead(tempPin);
-    double tempK = log(10000.0 * ((1024.0 / tempReading - 1)));
-    tempK = 1 / (0.001129148 + (0.000234125 + (0.0000000876741 * tempK * tempK )) * tempK );       //  Temp Kelvin
-    float tempC = tempK - 273.15;            // Convert Kelvin to Celcius
-    float tempF = (tempC * 9.0)/ 5.0 + 32.0; // Convert Celcius to Fahrenheit
+    // take CO2 data
+    mySerial.write(hexdata,9);
+   delay(500);
+
+ for(int i=0,j=0;i<9;i++)
+ {
+  if (mySerial.available()>0)
+  {
+     long hi,lo,CO2;
+     int ch=mySerial.read();
+
+    if(i==2){     hi=ch;   }   //High concentration
+    if(i==3){     lo=ch;   }   //Low concentration
+    if(i==8) {
+               CO2=hi*256+lo;  //CO2 concentration
+      Serial.print("CO2 concentration: ");
+      Serial.print(CO2);
+      Serial.println("ppm");
 
     DateTime now = rtc.now();
 
